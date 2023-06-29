@@ -33,3 +33,8 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Run APP in production
+```sh
+npx serve dist
+```

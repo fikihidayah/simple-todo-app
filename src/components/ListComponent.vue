@@ -29,19 +29,26 @@
 </template>
 <script>
 export default {
+  setup(props, { emit }) {
+    const deleteTodo = index => {
+      emit('deleteTodo', index)
+    }
+
+    const doneTodo = index => {
+      emit('doneTodo', index)
+    }
+
+    return {
+      deleteTodo,
+      doneTodo
+    }
+  },
+
   props: {
     todos: {
       type: Array,
       default: () => [],
     }
   },
-  methods: {
-    deleteTodo(index) {
-      this.$emit('deleteTodo', index)
-    },
-    doneTodo(index) {
-      this.$emit('doneTodo', index)
-    }
-  }
 }
 </script>
